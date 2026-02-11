@@ -1,9 +1,9 @@
 from googletrans import Translator, LANGUAGES
+import asyncio
 title = "Music’s Impact and Influence on Everyday Life"
 text = """As a person who loves music and even got into playing an instrument myself, it does have an influence on my everyday life. 
 I’m constantly listening to music whether it be while working during class, in the car on my way home, or just while practicing playing the guitar. Music is all around the world and one of the most popular forms of entertainment and escape. 
 It consists of many different styles and opinions, whether it be just personal opinion or even a part of your culture. Everyone has their own taste and opinions on music, which is why it’s one of the most common things to talk about. Just like how we all hear people say, “a lot can be said about a person based on their music taste,” and it’s fun finding people who share common interests with you, such as a favorite song or favorite song artist, or maybe something just as simple as liking the same music genre. It can also have an effect on people’s emotions and mind, as well as improving mental health. “Music exerts a powerful influence on human beings. It can boost memory, build task endurance, lighten your mood, reduce anxiety and depression, stave off fatigue, improve your response to pain, and help you work out more effectively,” describes Heathline.
-
 
 “Get Well Soon” is a song about Ariana confronting her anxieties and mental state.
 I’ve been listening to music for as long as I can remember, even if it was just for remembering the days of the week back in elementary school. Since being a kid, my favorite songs have changed, my favorite music artists have changed, and even my favorite genres have changed, but they’ve all helped me get to where I am now. It may not seem like it could have that effect, but I wouldn’t be the same person without it.
@@ -22,8 +22,16 @@ Even though my taste in music has changed and yours may too, it’s still comfor
 author = "Bryleigh Conley, Reporter"
 date = "April 12, 2023"
 article = f"{title}\n\n{author}\n{date}\n\n{text}"
-translator = Translator()
-print(f"Список доступных языков:\n{LANGUAGES}")
-lang = input("Выберите один из доступных языков: ")
-res = translator.translate(text, dest=lang)
-print(res.text)
+
+
+async def main():
+    translator = Translator()
+    print(f"Список доступных языков:\n{LANGUAGES}")
+    lang = input("Выберите один из доступных языков: ")
+
+    res = await translator.translate(text, dest=lang)
+    print(res.text)
+
+if name == "__main__":
+    asyncio.run(main())
+  
