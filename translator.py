@@ -1,5 +1,4 @@
 from googletrans import Translator, LANGUAGES
-import asyncio
 title = "Music’s Impact and Influence on Everyday Life"
 text = """As a person who loves music and even got into playing an instrument myself, it does have an influence on my everyday life. 
 I’m constantly listening to music whether it be while working during class, in the car on my way home, or just while practicing playing the guitar. Music is all around the world and one of the most popular forms of entertainment and escape. 
@@ -22,16 +21,9 @@ Even though my taste in music has changed and yours may too, it’s still comfor
 author = "Bryleigh Conley, Reporter"
 date = "April 12, 2023"
 article = f"{title}\n\n{author}\n{date}\n\n{text}"
+translator = Translator()
+print(f"Список доступных языков:\n{LANGUAGES}")
+lang = input("Выберите один из доступных языков: ")
 
-
-async def main():
-    translator = Translator()
-    print(f"Список доступных языков:\n{LANGUAGES}")
-    lang = input("Выберите один из доступных языков: ")
-
-    res = await translator.translate(text, dest=lang)
-    print(res.text)
-
-if name == "__main__":
-    asyncio.run(main())
-  
+res = translator.translate(text, dest=lang)
+print(res.text)
