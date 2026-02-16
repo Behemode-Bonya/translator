@@ -23,7 +23,7 @@ date = "April 12, 2023"
 article = f"{title}\n\n{author}\n{date}\n\n{text}"
 translator = Translator()
 print(f"Список доступных языков:\n{LANGUAGES}")
-lang = input("Выберите один из доступных языков: ")
+language = input("Выберите один из доступных языков: ")
 
-res = translator.translate(text, dest=lang)
-print(res.text)
+result = translator.translate(text, dest=language)
+print(result.text)
